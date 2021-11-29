@@ -3,7 +3,9 @@ package org.plaxidia;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        int [] num ={8,2,1,-3,124};
+        System.out.println("min of 5 numbers is =" + FindMin(num) );
+        System.out.println("average of 5 numbers is =" + FindAverage(num) );
     }
     public static int FindAverage( int [] arr)
     {
@@ -16,4 +18,20 @@ public class Main {
         System.out.println(" sum " + sum );
         return sum/arr.length;
     }
+    public static int FindMin (int[] num)
+    {
+        int n = 0;
+        int min = num [n];
+
+        for ( int i =0;i< num.length ;i++)
+        {
+            if (num[i] < min )
+            {
+                min=num[i];
+
+            }
+        }
+        return min;
+    }
+
 }
