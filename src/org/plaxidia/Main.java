@@ -5,10 +5,37 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-        int[] num = {8, 2, 1, -3, 124};
-        System.out.println("min of 5 numbers is =" + FindMin(num));
-        System.out.println("max of 5 numbers is =" + FindMax(num));
-        System.out.println("average of 5 numbers is =" + FindAverage(num));
+        //Random rand = new Random();
+        int[] arr =  Random();
+        System.out.println("min of 10 numbers between is =" + FindMin( arr ));
+        System.out.println("max of 10 numbers  between is =" + FindMax(arr) );
+        System.out.println("average of 10 numbers between  is =" + FindAverage(arr));
+        System.out.println("Array before  applying Bubble Sort: ");
+        for (int i=0;i< arr.length;i++){
+
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+        bubbleAscending(arr);
+        System.out.println("Array after applying Bubble Sort in ascending order: ");
+        for (int i = 0; i < arr.length; i++)
+        {
+            System.out.print(arr[i] + " ");
+        }
+
+
+
+        System.out.println("Array before applying Bubble Sort: ");
+        for (int i = 0; i <arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+        bubbleDescending(arr);
+        System.out.println("Array after applying Bubble Sort: ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+
     }
     public  static int[] Random ()
     {
@@ -50,7 +77,7 @@ public class Main {
         int n = 0;
         int max = arr[n];
 
-        for (int i = 0; i < arr.length; i++)
+        for(int i = 0; i < arr.length; i++)
         {
             if (arr[i] > max)
             {
@@ -62,7 +89,7 @@ public class Main {
     }
     static void bubbleAscending(int[] arr) {
         int n = arr.length;
-        int temp = 0;
+        int temp ;
         for (int i = 0; i < n; i++) {
             for (int j = 1; j < (n - i); j++) {
                 if (arr[j - 1] > arr[j]) {
@@ -78,7 +105,7 @@ public class Main {
     static void bubbleDescending(int[] arr)
     {
         int n = arr.length;
-        int temp = 0;
+        int temp ;
         for (int i = 0; i < n; i++)
         {
             for (int j = 1; j < (n - i); j++)
