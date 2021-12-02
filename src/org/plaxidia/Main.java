@@ -45,16 +45,35 @@ public class Main {
         return min;
     }
 
-    public static int FindMax(int[] arr) {
+    public static int FindMax(int[] arr)
+    {
         int n = 0;
         int max = arr[n];
 
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > max) {
+        for (int i = 0; i < arr.length; i++)
+        {
+            if (arr[i] > max)
+            {
                 max = arr[i];
             }
         }
         return max;
+
+    }
+    static void bubbleAscending(int[] arr) {
+        int n = arr.length;
+        int temp = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 1; j < (n - i); j++) {
+                if (arr[j - 1] > arr[j]) {
+                    //swap
+                    temp = arr[j - 1];
+                    arr[j - 1] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+
     }
 }
 
