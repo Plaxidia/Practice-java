@@ -1,5 +1,5 @@
 package org.plaxidia;
-
+/*
 import java.util.Random;
 
 public class Main {
@@ -123,6 +123,10 @@ public class Main {
     }
  //remove elements
 }
+
+
+*/
+//task 2 is to create a phone class
 
 
 
