@@ -22,5 +22,38 @@ public class PhoneClass {
         System.out.println("weight :" + grams );
 
     }
+    PhoneClass(String receivecall )
+    {
+        System.out.println("incoming call :" +  receivecall);
+        String Msg =null ;
+
+        boolean callreceived = false;
+        do {
+
+            callreceived = false;
+
+            System.out.println( "call missed!" + name);
+        }
+
+        while (callreceived==true);
+        //callreceived =true;
+        System.out.println("call received !:"+ name);
+    }
+    public void setName( String name)
+    {
+        this.name = "Mrs ." + name;
+    }
+    public String getname()
+    {
+        return name;
+    }
+    public void setnumber( String number)
+    {
+        this.number = number;
+    }
+    public String getnumber()
+    {
+        return number;
+    }
 
 }
