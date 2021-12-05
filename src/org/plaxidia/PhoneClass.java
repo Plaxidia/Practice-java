@@ -2,8 +2,8 @@ package org.plaxidia;
 
 public class PhoneClass {
     private String  number ;
-    private String model;
-    private String weight ;
+    public String model;
+    public String weight ;
     private String  receivecall;
     private String name ;
     PhoneClass()
@@ -12,7 +12,7 @@ public class PhoneClass {
         System.out.println("NEW PHONE CREATED");
     }
 
-    PhoneClass(String  n,String iphone ,String grams  )
+     public PhoneClass(String n, String iphone, String grams)
     {
         number =n;
         model = iphone ;
@@ -25,22 +25,23 @@ public class PhoneClass {
     PhoneClass(String receivecall)
     {
         System.out.println("incoming call :" +  receivecall);
-        String Msg =null ;
+        String Msg = " ";
         this.receivecall = receivecall;
 
         boolean callreceived = true;
 
         do {
         callreceived =true;
-        System.out.println("call received !:" + name);
+        System.out.println(Msg+"call received !:" + "name"+null);
 
          }while (callreceived = false);
 
-            System.out.println( "call missed!" + name);
+            System.out.println( Msg+ "call missed!" + "name "+null);
 
     }
 
-    public String getModel() {
+   /*
+   public String getModel() {
         return model;
     }
 
@@ -55,7 +56,7 @@ public class PhoneClass {
     public void setWeight(String weight) {
         this.weight = weight;
     }
-
+*/
     public String getName () {
         return name;
     }
@@ -66,8 +67,8 @@ public class PhoneClass {
         return number;
     }
 
-    public void setNumber(String name) {
-        this.name = number;
+    public void setNumber(String Number) {
+        this.number = Number;
     }
     @Override
     public  String toString()
@@ -82,4 +83,22 @@ public class PhoneClass {
     public void setReceivecall(String receivecall) {
         this.receivecall = receivecall;
     }
+
+    public static void main(String[] args) {
+
+        PhoneClass acc1 = new PhoneClass();
+        acc1.setNumber(  "0308395034");
+        acc1.setName("kaylee nelie ");
+        acc1.setReceivecall(" nelie");
+        System.out.println(acc1.getReceivecall());
+        System.out.println("callreceived:" + acc1.getReceivecall());
+        System.out.println(acc1.getName());
+        System.out.println("number:" + acc1.getNumber());
+
+    }
 }
+
+
+
+
+
