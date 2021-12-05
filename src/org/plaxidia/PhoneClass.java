@@ -56,4 +56,11 @@ public class PhoneClass {
         return number;
     }
 
+    @Override
+    public  String toString()
+    {
+        return "[ NAME : " + name + " .  phonenumber# " + number + "]";
+    }
+
+
 }
