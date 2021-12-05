@@ -22,45 +22,64 @@ public class PhoneClass {
         System.out.println("weight :" + grams );
 
     }
-    PhoneClass(String receivecall )
+    PhoneClass(String receivecall)
     {
         System.out.println("incoming call :" +  receivecall);
         String Msg =null ;
+        this.receivecall = receivecall;
 
-        boolean callreceived = false;
+        boolean callreceived = true;
+
         do {
+        callreceived =true;
+        System.out.println("call received !:" + name);
 
-            callreceived = false;
+         }while (callreceived = false);
 
             System.out.println( "call missed!" + name);
-        }
 
-        while (callreceived==true);
-        //callreceived =true;
-        System.out.println("call received !:"+ name);
     }
-    public void setName( String name)
-    {
-        this.name = "Mrs ." + name;
+
+    public String getModel() {
+        return model;
     }
-    public String getname()
-    {
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+
+    public String getName () {
         return name;
     }
-    public void setnumber( String number)
-    {
-        this.number = number;
+    public void setName(String name) {
+        this.name = " MRs ."+name;
     }
-    public String getnumber()
-    {
+    public String getNumber () {
         return number;
     }
 
+    public void setNumber(String name) {
+        this.name = number;
+    }
     @Override
     public  String toString()
     {
-        return "[ NAME : " + name + " .  phonenumber# " + number + "]";
+        return "[ NAME : " + name + " .  number# " + number + "]";
     }
 
+    public String getReceivecall() {
+        return receivecall;
+    }
 
+    public void setReceivecall(String receivecall) {
+        this.receivecall = receivecall;
+    }
 }
