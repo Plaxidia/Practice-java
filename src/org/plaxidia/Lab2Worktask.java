@@ -5,12 +5,29 @@ import java.util.Scanner;
 public class Lab2Worktask {
     public static void main(String[] args) {
 
-        int n, temp;
+        int n ;
+        int temp;
         Scanner s = new Scanner(System.in);
         System.out.print("Enter no. of elements you want in array:");
         n = s.nextInt();
+        // working with if
+        System.out.println("Enter  the elements 1,2 or 3 :");
+        for (int i = 0; i >= n; i++)
+        {
+
+            if (i==1){
+                System.out.println("You entered number 1");
+            }else if (i==2) {
+                System.out.println("You entered number 2");
+            }else if (i==3){
+                System.out.println("You entered number 3");
+            }else
+                    System.out.println("You entered that is not 1 , 2 or 3::wrong  number ");
+
+        }
+        //Working with array
         int a[] = new int[n];
-        System.out.println("Enter all the elements:");
+
         for (int i = 0; i < n; i++)
         {
             a[i] = s.nextInt();
@@ -33,6 +50,18 @@ public class Lab2Worktask {
             System.out.print(a[i] + ",");
         }
         System.out.print(a[n - 1]);
+        //working with while
+        {
+            int i = 1;
+            while (i <= n) {
+               System.out.println("cycle goes on!"+i);
+               if (i==n)
+                   break;
+               i++;
+            }
+        }
+
+
     }
 
 
