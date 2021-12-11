@@ -17,6 +17,8 @@ public class lab2 {
 
         addingSequence();
         MultiplyingSequence();
+        String str = "One two       three\n four\tfive ";
+        System.out.println(" No of words =: " + countWords(str));
     }
     static void Ascending(int[] arr)
     {
@@ -86,16 +88,13 @@ public class lab2 {
         int n;
         System.out.print("Enter an integer: ");
         n = scan.nextInt();
-
-
-        //System.out.print("Enter an integer: ");
         while (n <= m)
         {
+            System.out.println("the answer =");
             answer = answer + n;
             ++n;
-            System.out.println("the answer =" + answer);
-
-
+            //System.out.println("the answer =" + answer);
+            System.out.println( answer);
         }
     }
     public static void addingSequence ()
@@ -130,6 +129,46 @@ public class lab2 {
 
             }
         }
+    // Function to count total number of words in the string
+    public static int countWords(String str)
+    {
+
+        // Check if the string is null
+        // or empty then return zero
+        if (str == null || str.isEmpty())
+            return 0;
+        int wordCount = 0;
+
+        boolean isWord = false;
+        int endOfLine = str.length() - 1;
+
+        // Converting the given string into a character array
+        char[] ch = str.toCharArray();
+
+        for (int i = 0; i < ch.length; i++) {
+
+            // Check if the character is a letter and index of character array is not equal to end of line that means, it is a word and set isWord by true
+            if (Character.isLetter(ch[i]) && i != endOfLine)
+
+                isWord = true;
+
+                // Check if the character is not a letter that means there is a space, then we increment the wordCount by one and set the isWord by false
+            else if  (!Character.isLetter(ch[i]) && isWord) {
+
+                wordCount++;
+                isWord = false;
+            }
+
+            // Check for the last word of the sentence and increment the wordCount by one
+            else if (Character.isLetter(ch[i]) && i == endOfLine)
+                wordCount++;
+        }
+
+        // Return the total number of words in the string
+        return wordCount;
+
+    }
+
 
 }
 
