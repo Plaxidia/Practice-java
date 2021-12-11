@@ -13,12 +13,8 @@ public class lab2 {
         Ascending(arr);
         Descending(arr);
         multiplication();
-        addnumber();
-       // System.out.print("Nextnumber:" + Nextnumber(enterednumber));
-
-        int n = 7;
-        Nextnumber(n);
-       // System.out.print("Nextnumber:" + Nextnumber(n));
+        addingSequence();
+        MultiplyingSequence();
     }
     static void Ascending(int[] arr)
     {
@@ -78,43 +74,64 @@ public class lab2 {
         }
 
     }
-    public static void addnumber() {
-        Scanner scan = new Scanner(System.in);
-        int m = 5;
-        int answer = 0;
-        int n;
-        System.out.print("Enter an integer: ");
-        n = scan.nextInt();
-
-        while (true) {
-            System.out.print("Enter an integer: ");
 
 
-            if (n <= m) {
-                answer = answer + n;
-                System.out.println("the answer");
 
-            }
-            ++n;
-            System.out.println( "the answer"+answer);
-        }
-
-
-    }
-
-    public static void Nextnumber(int n){
-
+//    public static void addnumber() {
+//        Scanner scan = new Scanner(System.in);
+//        int m = 5;
+//        int answer = 0;
+//        int n;
+//        System.out.print("Enter an integer: ");
+//        n = scan.nextInt();
+//
+//        do {
+//            //System.out.print("Enter an integer: ");
+//            if (n <= m) {
+//                answer = answer + n;
+//            }
+//            ++n;
+//            System.out.println("the answer =" + answer);
+//            break;
+//
+//        } while (true);
+//
+//    }
+    public static void addingSequence() {
         System.out.println("the next number is :");
 
-        int sum ;
-        for (int  a=7; a <= n; a++)
-        {
-            sum= a+n;
-            sum=sum+a;
+        int f = 7;
+        int p = 7;
 
-            System.out.println(sum+"="+a);
+        while (f <= 98)
+        {
+            int t;
+            System.out.println(" print "+ f );
+            t = f + p;
+            p = f;
+            f = t;
+        }
+        System.out.println(" ");
+
+
+    }
+    public static void MultiplyingSequence()
+    {
+        int a = 2;
+        int b = 1;
+
+        while (a <= 512)
+        {
+            int t;
+            System.out.println(" print "+ a );
+            t = a * b;
+            b = a;
+            a = t;
+
         }
     }
+
+
 
 }
 
