@@ -1,101 +1,121 @@
 package org.plaxidia;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
+
 
 
 public class lab2 {
 
     public static void main(String[] args) {
 
-        int[] arr = {4, 6, 19, 2, 7, 12, 1, 9};
-        int[] result =multiplication();
-        System.out.print("Elements before  sorting are : ");
-        Descending(arr);
-        System.out.print("Elements after sorting Descending(arr); are : ");
+
+        int[] arr = {2,2,3,4,4,5,8,6};
+
         Ascending(arr);
-        System.out.print("Elements after sorting ascending(arr); are : ");
+        Descending(arr);
+        int result =multiplication();
         multiplication();
-        System.out.print("Elements before  multiplication are : ");
 
-        System.out.print("Elements after   multiplication are : "+ Arrays.toString(result));
+        System.out.print("");
+        
+        addnumber();
 
-        assert result != null;
+        int n = 7;
+        Nextnumber(n);
+        System.out.print("Nextnumber:" + Nextnumber(n));
 
-        Scanner s = new Scanner(System.in);
-        ArrayList<Integer> A = new ArrayList<>();
-        int n;
-        while (true) {
-            System.out.println("enter a number");
-            n = s.nextInt();
-            if (n == 0)
+
+        //assert result != null;
+        
+    }
+    static void Ascending(int[] arr)
+    {
+        int n = arr.length;
+        for (int i = 0; i < arr.length; i++)
+        {
+            for (int j = i + 1; j < arr.length; j++)
             {
-                break;
+                int tmp = 0;
+                if (arr[i] > arr[j])
+                {
+                    tmp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = tmp;
+                }
             }
-            A.add(n);
+            //prints the sorted element of the array
+            System.out.println("Array elements in ascending order:");
+            for (i = 0; i <=arr.length - 1; i++)
+            {
+                System.out.println(arr[i]);
+            }
 
-        }
+       }
 
-        System.out.println(" You entered the number");
-        int i =0 ;
-        while (i<A.size()) {
-            System.out.println(A.get(i)+ "");
-            i++;
-        }
     }
     static void Descending(int[] arr)
     {
         int n = arr.length;
         int temp ;
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < arr.length; i++)
         {
-            for (int j = 1; j < (n - i); j++)
+            for (int j = i + 1; j < arr.length; j++)
             {
-                if( arr[j - 1] < arr[j])
+                if (arr[i] < arr[j])
                 {
-                    //swap
-
-                    temp =arr[j - 1];
-                    arr[j - 1] = arr[j];
+                    temp = arr[i];
+                    arr[i] = arr[j];
                     arr[j] = temp;
                 }
             }
         }
-    }
-    static void Ascending(int[] arr)
-    {
-        int n = arr.length;
-        int temp ;
-        for (int i = 0; i < n; i++)
+        System.out.println("Array elements in descending order:");
+        //accessing element of the array
+        for (int i = 0; i <=arr.length - 1; i++)
         {
-
-            for  (int j=1;j < (n - i);j++)
-            {
-                if (arr[j - 1] > arr[j])
-                {
-                    //swap
-                    temp = arr[j - 1];
-                    arr[j - 1] = arr[j];
-                    arr[j] = temp;
-                }
-
-            }
+            System.out.println(arr[i]);
         }
 
-    }
-    static int[] multiplication()
+
+}
+    static int multiplication()
     {
-        int  result = 3;
-        System.out.println("array before multiplying ");
+        System.out.print("Elements after   multipliying by  :");
+        int  result = 0;
+        int n=3;
         for (int j =1;j<=10;++j)
         {
-            result = result * j;
-            System.out.println("the product") ;
+            result = n* j;//j is the in index
+            System.out.println(result) ;
 
         }
-
-        return null;
+        return result;
     }
+    public static int addnumber(){
+        System.out.println("enter a number:");
+        int enterednumber =0;
+        int m=5;
+       for (int i=0;i<=m;i++) {
+
+           enterednumber=enterednumber +i;
+           i++;
+       }
+        //System.out.println(" You entered the number");
+        return enterednumber ;
+    }
+
+
+    public static int Nextnumber(int n){
+
+        int sum =0;
+        for (int  a=7; a <= n; a++)
+        {
+            sum= a+n;
+            sum=sum+a;
+
+            System.out.println(sum+"="+a);
+        }
+        return sum;
+    }
+
 }
 
