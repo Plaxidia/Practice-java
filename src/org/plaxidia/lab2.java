@@ -1,7 +1,7 @@
 package org.plaxidia;
 
 
-
+import java.util.Scanner;
 
 public class lab2 {
 
@@ -12,29 +12,21 @@ public class lab2 {
 
         Ascending(arr);
         Descending(arr);
-        int result =multiplication();
         multiplication();
-
-        System.out.print("");
-        
         addnumber();
+       // System.out.print("Nextnumber:" + Nextnumber(enterednumber));
 
         int n = 7;
         Nextnumber(n);
-        System.out.print("Nextnumber:" + Nextnumber(n));
-
-
-        //assert result != null;
-        
+       // System.out.print("Nextnumber:" + Nextnumber(n));
     }
     static void Ascending(int[] arr)
     {
-        int n = arr.length;
         for (int i = 0; i < arr.length; i++)
         {
             for (int j = i + 1; j < arr.length; j++)
             {
-                int tmp = 0;
+                int tmp;
                 if (arr[i] > arr[j])
                 {
                     tmp = arr[i];
@@ -48,13 +40,10 @@ public class lab2 {
             {
                 System.out.println(arr[i]);
             }
-
-       }
-
+        }
     }
     static void Descending(int[] arr)
     {
-        int n = arr.length;
         int temp ;
         for (int i = 0; i < arr.length; i++)
         {
@@ -75,12 +64,11 @@ public class lab2 {
             System.out.println(arr[i]);
         }
 
-
-}
-    static int multiplication()
+    }
+    static void multiplication()
     {
-        System.out.print("Elements after   multipliying by  :");
-        int  result = 0;
+        System.out.print("Elements after  multiplying by  :");
+        int  result ;
         int n=3;
         for (int j =1;j<=10;++j)
         {
@@ -88,25 +76,37 @@ public class lab2 {
             System.out.println(result) ;
 
         }
-        return result;
+
     }
-    public static int addnumber(){
-        System.out.println("enter a number:");
-        int enterednumber =0;
-        int m=5;
-       for (int i=0;i<=m;i++) {
+    public static void addnumber() {
+        Scanner scan = new Scanner(System.in);
+        int m = 5;
+        int answer = 0;
+        int n;
+        System.out.print("Enter an integer: ");
+        n = scan.nextInt();
 
-           enterednumber=enterednumber +i;
-           i++;
-       }
-        //System.out.println(" You entered the number");
-        return enterednumber ;
+        while (true) {
+            System.out.print("Enter an integer: ");
+
+
+            if (n <= m) {
+                answer = answer + n;
+                System.out.println("the answer");
+
+            }
+            ++n;
+            System.out.println( "the answer"+answer);
+        }
+
+
     }
 
+    public static void Nextnumber(int n){
 
-    public static int Nextnumber(int n){
+        System.out.println("the next number is :");
 
-        int sum =0;
+        int sum ;
         for (int  a=7; a <= n; a++)
         {
             sum= a+n;
@@ -114,7 +114,6 @@ public class lab2 {
 
             System.out.println(sum+"="+a);
         }
-        return sum;
     }
 
 }
