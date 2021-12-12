@@ -91,7 +91,7 @@ public class lab2 {
         while (n <= m)
         {
             System.out.println("the answer =");
-            answer = answer + n;
+            answer = answer + (n+1);
             ++n;
             //System.out.println("the answer =" + answer);
             System.out.println( answer);
