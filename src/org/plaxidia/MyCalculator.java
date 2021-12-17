@@ -1,66 +1,65 @@
 package org.plaxidia;
-
-
+import java.util.Random;
 import java.util.Scanner;
 
 
-public class MyCalculator {
+public class  MyCalculator {
 
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println("Hello this is my calculator!");
         getInt();
-        getOperation ();
-        calculate ();
-    }
+        getOperation();
+        result number1 =new result( );
+        number1.calculate();
+        AddAll();
 
-    public static void getInt()
-    {
-        Scanner myInput = new Scanner( System.in );  // Create Scanner object
+
+
+    }
+    public static void getInt() {
+        Scanner myInput = new Scanner(System.in);  // Create Scanner object
         // Declare the variables
         int a;
         int b;
-        System.out.print( "Enter first integer: "  ); // Input the integer
+        System.out.print("Enter first integer: "); // Input the integer
         a = myInput.nextInt();// Read the next integer from the screen
-        System.out.print( "the value of a is =: " +a  );// Display the integer
+        System.out.print("the value of a is =: " + a);// Display the integer
 
-        System.out.print( "Enter second integer: " ); // Input the integer
+        System.out.print("Enter second integer: "); // Input the integer
         b = myInput.nextInt();
         // Read the next integer from the screen
-        System.out.print( "the value of b= : " +b );// Display the integer
+        System.out.print("the value of b= : " + b);// Display the integer
     }
-    
-     private static void getOperation() {
 
-         Scanner scanner = new Scanner(System.in);
-         System.out.println(" Select between (*,/,+,-): ");
-         String op = scanner.next();
-         String sign = "You have selected ";
-         switch (op) {
-             case "*":
-                 System.out.println("*" + "the entered sign is :*" + sign);
-                 break;
-             case "/":
-                 System.out.println("/ " + "the entered sign is :" + sign);
-                 break;
-             case "+":
-                 System.out.println("+" + "the entered sign is :" + sign);
-                 break;
-             case "-":
-                 System.out.println("_" + "the entered sign is :" + sign);
-                 break;
-             default:
-                 System.out.println("\"the entered sign is \"+sign");
-         }
-         scanner.close();
-     }
-     public static  void calculate (){
-        int answer ;
-        int x  ;
+    private static void getOperation() {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(" Select between (*,/,+,-): ");
+        String op = scanner.next();
+        String sign = "You have selected ";
+        switch (op) {
+            case "*" -> System.out.println("*" + "the entered sign is :*" + sign);
+            case "/" -> System.out.println("/ " + "the entered sign is :" + sign);
+            case "+" -> System.out.println("+" + "the entered sign is :" + sign);
+            case "-" -> System.out.println("_" + "the entered sign is :" + sign);
+            default -> System.out.println("\"the entered sign is \"+sign");
+        }
+        scanner.close();
+    }
+    interface inc{
+        void calculate ();
+
+    }
+static class result implements inc {
+
+    public void calculate() {
+        int answer;
+        int x;
         int y;
         boolean go = true;    //sets up loop
 
-        while(go)    //creates loop to top
+        while (go)    //creates loop to top
         {
             Scanner scan = new Scanner(System.in);    //sets up scanners
             Scanner scan1 = new Scanner(System.in);
@@ -68,16 +67,16 @@ public class MyCalculator {
 
             String sign = scan.nextLine();    //tells comp. to take user input
 
-            if("a".equals(sign))    //addition
+            if ("a".equals(sign))    //addition
             {
                 System.out.println("Enter first integer: .");
                 x = scan.nextInt();
                 System.out.println("Enter the second integer:.");
-                y= scan.nextInt();
+                y = scan.nextInt();
                 answer = x + y;
-                System.out.println(x + " added to " + y+ " equals " + answer + "!");
+                System.out.println(x + " added to " + y + " equals " + answer + "!");
             }
-            if("s".equals(sign))    //subtraction
+            if ("s".equals(sign))    //subtraction
             {
                 System.out.println("Enter first integer:");
                 int sub1 = scan.nextInt();
@@ -86,7 +85,7 @@ public class MyCalculator {
                 int sub3 = sub1 - sub2;
                 System.out.println(sub1 + " subtracted by " + sub2 + " equals " + sub3 + "!");
             }
-            if("m".equals(sign))    //multiplication
+            if ("m".equals(sign))    //multiplication
             {
                 System.out.println("Enter first integer:");
                 int mul1 = scan.nextInt();
@@ -95,7 +94,7 @@ public class MyCalculator {
                 int mul3 = mul1 * mul2;
                 System.out.println(mul1 + " multiplied by " + mul2 + " equals " + mul3 + "!");
             }
-            if("d".equals(sign))    //division
+            if ("d".equals(sign))    //division
             {
                 System.out.println("Enter first integer:");
                 int div1 = scan.nextInt();
@@ -109,15 +108,28 @@ public class MyCalculator {
             System.out.println("Would you like to start over? (yes,no)");
             String startOver = scan1.nextLine();
 
-            if("no".equals(startOver))
-            {
+            if ("no".equals(startOver)) {
                 go = false;
                 System.out.println("good bye");
             }
         }
     }
 
+}
+public static void   AddAll()
+{
+        int sum = 0;
+        Random rand =new Random()  ;// creating Random object
+        int[] arr= new int[9]  ;
 
-     }
+       for (int n=0;n<arr.length;n++)
+       {
+        arr[n] = rand.nextInt();// storing random integers in an array
+           sum= arr[n]+rand.nextInt();
+        System.out.println("the sum"+sum);// printing each array element
+      }
+
+}
+
 
 }
