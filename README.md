@@ -1,2 +1,2 @@
 # Practise-java
-# this repository was made made for practise purposes
+# This repository was made made for practice purposes
